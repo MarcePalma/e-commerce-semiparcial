@@ -10,8 +10,9 @@ datasource db {
 model Usuario {
   id       String  @id @default(uuid())
   nombre   String
+  apellido String
   email    String  @unique
   password String
   edad     Int
-  activo   Boolean @default(true)
+  authorized Boolean @default(false)
 }
