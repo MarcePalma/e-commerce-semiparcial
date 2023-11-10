@@ -1,20 +1,22 @@
-"use client";
 import { createContext, useState } from "react";
 
-export const UserContext = createContext({} as any);
+let initialUser = {
+  id: "",
+  firstName: "",
+  lastName: "",
+  email: "",
+  age:"",
+  token: "",
+  authorized: false,
+};
+
+export const UserContext = createContext(initialUser);
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState({
-    nombre: "",
-    apellido:"",
-    edad: 0,
-    email: "",
-    password: "",
-    authorized:""
-
-  });
+  const [user, setUser] = useState(initialUser);
 
   return (
+    //@ts-ignore
     <UserContext.Provider value={{ user, setUser }}>
       {children}
     </UserContext.Provider>

@@ -8,11 +8,29 @@ datasource db {
 }
 
 model Usuario {
-  id       String  @id @default(uuid())
-  nombre   String
-  apellido String
-  email    String  @unique
-  password String
-  edad     Int
-  authorized Boolean @default(false)
+  id         String    @id @default(uuid())
+  nombre     String
+  apellido   String
+  email      String    @unique
+  password   String
+  edad       Int
+  authorized Boolean   @default(false)
+  Carrito    Carrito[]
+}
+
+model Carrito {
+  id        Int       @id @default(autoincrement())
+  productos  Producto[]
+  UsuarioId String?
+  usuario   Usuario?  @relation(fields: [UsuarioId], references: [id])
+
+  @@index([UsuarioId])
+}
+
+model Producto {
+  id        Int      @id @default(autoincrement())
+  carrito   Carrito? @relation(fields: [carritoId], references: [id])
+  carritoId Int?
+
+  @@index([carritoId])
 }

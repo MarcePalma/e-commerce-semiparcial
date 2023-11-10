@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import SearchBar from './SearchBar';
+import SearchBar from '../SearchBar/SearchBar';
 import { BackIcon, CartIcon, DarkMode, LogoutIcon, SettingsIcon, UserIcon } from '@/utils/Icons';
 
 export default function NavBar() {

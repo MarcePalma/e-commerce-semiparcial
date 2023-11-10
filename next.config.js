@@ -8,6 +8,6 @@ const withImages = require('next-images');
 module.exports = withImages({
   ...nextConfig,
   images: {
-    domains: ['fakestoreapi.com'], // Agrega aquí el dominio de las imágenes externas
+    domains: ['fakestoreapi.com', 'images.unsplash.com'],
   },
 });

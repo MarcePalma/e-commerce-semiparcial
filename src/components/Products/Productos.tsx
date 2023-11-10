@@ -1,7 +1,7 @@
 
 "use client"
 import React from 'react';
-import { Product } from '../types/component.types';
+import { Product } from '../../types/component.types';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
