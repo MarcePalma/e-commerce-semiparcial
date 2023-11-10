@@ -1,20 +1,12 @@
 
 import { Inter } from 'next/font/google'
 import NavBar from '@/components/Nav/navBar'
-import ProductList from '@/components/Products/Productos'
-import CategoryButton from '@/components/Category/CategoryButton'
-import { useState } from 'react'
 import Header from '@/components/Header/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState('electronics');
-
-  const handleCategoryChange = (newCategory: string) => {
-    setSelectedCategory(newCategory);
-  };
   return (
     <main
 
