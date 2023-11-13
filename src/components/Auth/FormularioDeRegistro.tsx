@@ -30,7 +30,7 @@ const FormularioDeRegistro = () => {
             authorized: false,
         };
         const respuesta = await fetch(
-            "http://localhost:3000/api/usuarios/register",
+            "https://e-commerce-semiparcial-git-main-marcepalma.vercel.app/",
             {
                 method: "POST",
                 headers: {
