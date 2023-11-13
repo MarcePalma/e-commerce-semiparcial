@@ -1,19 +1,19 @@
 import { Dispatch, SetStateAction, ReactNode } from 'react';
 
 export interface Product {
-    id: number;
-    title: string;
-    image: string;
-    price: number;
+  id: number;
+  title: string;
+  image: string;
+  price: number;
 }
 
 export interface ProductCardProps {
-    product: Product;
+  product: Product;
 }
 
 export interface CategoryButtonProps {
-    selectedCategory: string;
-    onCategoryChange: (category: string) => void;
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
 }
 
 export interface User {
@@ -22,7 +22,7 @@ export interface User {
   lastName: string;
   email: string;
   age: number;
-  token: string;
+  token?: string;
   authorized: boolean;
 }
 
