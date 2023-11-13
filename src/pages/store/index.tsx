@@ -1,13 +1,11 @@
 import { Product } from "@/types/component.types";
 import Productos from "@/components/Products/Productos";
-import Header from "@/components/Header/Header";
 
 
 export default function Page({ products }: { products: Product[] }) {
 
     return (
         <>
-            <Header />
             <Productos />
         </>
     );

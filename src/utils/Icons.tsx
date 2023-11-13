@@ -6,7 +6,7 @@ export function FireIcon() {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="#ff2825"
-            fill="none"
+            fill="#FBD428"
             strokeLinecap="round"
             strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
