@@ -1,8 +1,9 @@
+import FormularioDeLogin from "@/components/Auth/FormularioDeLogin";
 
 export default function Page() {
     return (
         <main>
-            <p>Login!</p>
+            <FormularioDeLogin />
         </main>
     )
 }
