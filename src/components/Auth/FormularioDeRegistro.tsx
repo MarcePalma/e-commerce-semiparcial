@@ -27,10 +27,10 @@ const FormularioDeRegistro = () => {
             //@ts-ignore
             age: Number(edadRef.current?.value) || 0,
             //@ts-ignore
-            authorized: false, // Inicia en false y cambiará después del inicio de sesión o registro
+            authorized: false,
         };
         const respuesta = await fetch(
-            "/api/usuarios/register",
+            "http://localhost:3000/api/usuarios/register",
             {
                 method: "POST",
                 headers: {
