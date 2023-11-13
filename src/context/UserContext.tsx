@@ -1,7 +1,15 @@
 import React, { createContext, useContext, useState } from 'react';
 import { User, UserContextProps, UserProviderProps } from '@/types/component.types';
 
-export const UserContext = createContext<UserContextProps | undefined>(undefined);
+export const UserContext = createContext<UserContextProps>({ user: {
+  id: '',
+  firstName: '',
+  lastName: '',
+  email: '',
+  age: 0,
+  token: '',
+  authorized: false
+}, setUser: () => {} });
 
 export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User>({
@@ -9,7 +17,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     firstName: "",
     lastName: "",
     email: "",
-    age: "",
+    age: 0,
     token: "",
     authorized: false,
   });

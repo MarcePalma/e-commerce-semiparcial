@@ -21,16 +21,16 @@ export interface User {
   firstName: string;
   lastName: string;
   email: string;
-  age: string;
+  age: number;
   token: string;
   authorized: boolean;
 }
 
 export interface UserContextProps {
   user: User;
-  setUser: Dispatch<SetStateAction<User>>;
+  setUser: React.Dispatch<React.SetStateAction<User>>;
 }
 
 export interface UserProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }

@@ -1,4 +1,4 @@
-import { emailRegex, passwordRegex } from "@/utils/regex";
+import { emailRegex, passwordRegex } from "@/utils/Regex";
 import { encriptarPassword } from "@/utils/crypto";
 import { PrismaClient } from "@prisma/client";
 import { sign } from "jsonwebtoken";

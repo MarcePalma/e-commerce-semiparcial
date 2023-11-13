@@ -32,6 +32,7 @@ return (
   <main
   >
     <section className={`flex min-h-screen flex-col items-center justify-between p-10 ${inter.className}`}>
+      <Image src="/images/mercadopago-logo.png" width={250} height={250} alt='mp-logo'/>
       <FireIcon />
       <article className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {products.map((product) => (

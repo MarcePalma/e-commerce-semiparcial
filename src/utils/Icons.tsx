@@ -1,6 +1,7 @@
 export function FireIcon() {
     return (
         <svg
+            className="py-200"
             width="44"
             height="44"
             viewBox="0 0 24 24"
