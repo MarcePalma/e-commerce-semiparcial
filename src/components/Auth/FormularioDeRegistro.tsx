@@ -65,7 +65,7 @@ const FormularioDeRegistro = () => {
                     />
 
                     <div className="hidden lg:relative lg:block lg:p-12">
-                        <a className="block text-white" href="/">
+                        <Link className="block text-white" href="/">
                             <span className="sr-only">Home</span>
                             <svg
                                 className="h-8 sm:h-10"
@@ -78,7 +78,7 @@ const FormularioDeRegistro = () => {
                                     fill="currentColor"
                                 />
                             </svg>
-                        </a>
+                        </Link>
 
                         <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
                             Bienvenido a Tienda Shopix🛍️
@@ -95,7 +95,7 @@ const FormularioDeRegistro = () => {
                 >
                     <div className="max-w-xl lg:max-w-3xl">
                         <div className="relative -mt-16 block lg:hidden">
-                            <a
+                            <Link
                                 className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white text-blue-600 sm:h-20 sm:w-20"
                                 href="/"
                             >
@@ -111,7 +111,7 @@ const FormularioDeRegistro = () => {
                                         fill="currentColor"
                                     />
                                 </svg>
-                            </a>
+                            </Link>
 
                             <h1
                                 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
