@@ -6,7 +6,19 @@ import { sign } from "jsonwebtoken";
 const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
+  // Configurar los encabezados CORS
+  const headers = new Headers();
+  headers.set("Access-Control-Allow-Origin", "*"); // Esto permite solicitudes desde cualquier origen
+  headers.set("Access-Control-Allow-Methods", "POST");
+  headers.set("Access-Control-Allow-Headers", "Content-Type");
+
+  // Verificar el método de la solicitud
+  if (req.method !== "POST") {
+    return new Response(null, { status: 405, headers });
+  }
+
   const usuario = await req.json();
+
 
   if (Object.values(usuario).includes(undefined)) {
     return new Response(JSON.stringify({ msg: "Error! Faltan datos" }), {
@@ -38,5 +50,5 @@ export async function POST(req: Request) {
 
   const token = sign(usuarioAGuardar, process.env.TOKEN_SECRET as string);
 
-  return new Response(JSON.stringify({ token }), { status: 201 });
+  return new Response(JSON.stringify({ token }), { status: 201, headers });
 }
