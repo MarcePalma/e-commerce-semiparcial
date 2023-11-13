@@ -16,7 +16,7 @@ const transitionVariants = {
     }
 }
 
-export default function () {
+const Transition = () => {
 
     return (
         <>
@@ -51,3 +51,5 @@ export default function () {
 
     )
 }
+
+export default Transition
