@@ -37,16 +37,7 @@ export default function FormularioDeLogin() {
         }
 
         const { token } = await respuesta.json();
-        setUser({
-            id: '',            
-            firstName: '',     
-            lastName: '',      
-            email: '',         
-            age: 0,            
-            token,             
-            authorized: false, 
-        });
-
+        setUser((prevUser) => ({ ...prevUser, token }));
     }
     return (
         <section className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
