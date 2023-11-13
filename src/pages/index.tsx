@@ -13,7 +13,7 @@ export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const loadProducts = async () => {
     try {
-      const response = await fetch('https://fakestoreapi.com/products?limit=2')
+      const response = await fetch('https://fakestoreapi.com/products?limit=4')
       if (!response.ok) {
         throw new Error('No se pudieron obtener los productos.');
       }
