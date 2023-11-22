@@ -1,31 +1,34 @@
-import React from 'react';
-import { CategoryButtonProps } from '@/types/component.types';
+import Link from "next/link";
 
-function CategoryButton({ selectedCategory, onCategoryChange }: CategoryButtonProps) {
+export default function CategoryButtons() {
   const categories = [
-    'electronics',
-    'jewelery',
-    "men's clothing",
-    "women's clothing",
+    {
+      name: "Women's clothing",
+      path: "women's clothing",
+    },
+    {
+      name: "Men's clothing",
+      path: "men's clothing",
+    },
+    {
+      name: "Electronics",
+      path: "electronics",
+    },
+    {
+      name: "Jewelery",
+      path: "jewelery",
+    },
   ];
 
   return (
-    <div>
-      {categories.map((category) => (
-        <button
-          className="group inline-block rounded-full bg-gradient-to-r from-black via-gray-600 to-slate-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
-          key={category}
-          onClick={() => onCategoryChange(category)}
-        >
-          <span
-            className="block rounded-full bg-white px-8 py-3 text-sm font-medium group-hover:bg-transparent"
-          >
-            {category}
-          </span>
-        </button>
+    <ul className="min-w-full px-6 flex gap-2 overflow-x-auto">
+      {categories.map((category, index) => (
+        <li key={index}>
+          <Link href={`/store/categories/${category.path}`} className="bg-[#e7e7e7] p-4 whitespace-nowrap rounded-lg overflow-hidden text-black">
+            {category.name}
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
-
-export default CategoryButton;

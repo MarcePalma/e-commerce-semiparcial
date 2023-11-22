@@ -1,17 +1,19 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Product } from "@/types/component.types";
+import CategoryButtons from "@/components/Category/CategoryButton";
+import { ArrowIcon, BackIcon } from "@/utils/Icons";
 
-"use client"
-import React from 'react';
-import { Product } from '../../types/component.types';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-
-export default function Productos() {
+export default function CategoryPage() {
+    const router = useRouter();
+    const { path } = router.query;
     const [products, setProducts] = useState<Product[]>([]);
 
-    const loadProducts = async () => {
+    const fetchProductsByCategory = async () => {
         try {
-            const response = await fetch('https://fakestoreapi.com/products');
+            const response = await fetch(`https://fakestoreapi.com/products/category/${path}`);
             if (!response.ok) {
                 throw new Error('No se pudieron obtener los productos.');
             }
@@ -23,11 +25,13 @@ export default function Productos() {
     };
 
     useEffect(() => {
-        loadProducts();
+        fetchProductsByCategory();
     }, []);
 
     return (
+
         <section className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <Link href="/store"><BackIcon /></Link>
             {products.map((product) => (
                 <Link key={product.id} href="#" className="block group">
                     <article className="border border-gray-200 rounded-lg overflow-hidden">
@@ -52,5 +56,3 @@ export default function Productos() {
         </section>
     );
 }
-
-

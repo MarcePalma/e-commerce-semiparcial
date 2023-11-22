@@ -34,3 +34,21 @@ export interface UserContextProps {
 export interface UserProviderProps {
   children: React.ReactNode;
 }
+
+export interface SearchBarProps {
+  allProducts: Product[];
+  onSearch: (filteredProducts: Product[]) => void;
+}
+
+export interface SearchContextValue {
+  searchResults: Product[]
+  updateSearchResults: Dispatch<SetStateAction<Product[]>>;
+}
+
+export interface SearchContextProps {
+  children: ReactNode;
+}
+
+export interface ExtendedSearchContextValue extends SearchContextValue {
+  searchResults: Product[];
+}

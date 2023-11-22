@@ -7,6 +7,7 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router'
 import { AnimatePresence, motion } from 'framer-motion'
 import Transition from '@/components/Transition/transition';
+import { SearchProvider } from '@/components/SearchBar/SearchContext';
 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <UserProvider>
       <CartProvider>
         <Announcement />
+        <SearchProvider>
         <Layout>
           <AnimatePresence mode='wait'>
             <motion.div key={router.route} className='h-full'>
@@ -24,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
             </motion.div>
           </AnimatePresence>
         </Layout>
+        </SearchProvider>
       </CartProvider>
     </UserProvider>
   );

@@ -2,6 +2,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import SearchBar from '../SearchBar/SearchBar';
 import { BackIcon, CartIcon, DarkMode, LogoutIcon, SettingsIcon, UserIcon } from '@/utils/Icons';
+import { useSearch } from '../SearchBar/SearchContext';
+import { Product, SearchBarProps } from '@/types/component.types';
+
 
 export default function NavBar() {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -9,12 +12,18 @@ export default function NavBar() {
     const toggleNavbar = () => {
         setNavbarOpen(!navbarOpen);
     };
+    const { updateSearchResults }: { updateSearchResults: (results: Product[]) => void } = useSearch() as any;
+
+
+    const handleSearch = (filteredProducts: Product[]): void => {
+        console.log(filteredProducts);
+    };
 
     return (
         <div className="flex justify-center items-center p-2">
             <div className="flex items-center">
                 <div className="flex items-center space-x-4">
-                    <SearchBar />
+                    <SearchBar allProducts={[]} onSearch={handleSearch} />
                 </div>
             </div>
             <button onClick={toggleNavbar} className="text-gray-600">

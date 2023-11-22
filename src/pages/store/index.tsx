@@ -1,11 +1,13 @@
 import { Product } from "@/types/component.types";
 import Productos from "@/components/Products/Productos";
+import CategoryButtons from "@/components/Category/CategoryButton";
 
 
 export default function Page({ products }: { products: Product[] }) {
 
     return (
         <>
+            <CategoryButtons/>
             <Productos />
         </>
     );
